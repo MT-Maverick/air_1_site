@@ -1,0 +1,65 @@
+
+ul{
+  list-style-type: none;
+  display: inherit;
+}
+
+li{
+  display: inherit;
+}
+.menu{
+  padding-left: 5%;
+  display:inherit;
+}
+#menu_bar{
+  margin:0;
+  position:absolute;
+  padding-left: 30%;
+  display: flex;
+}
+.inactive{
+  display:none;
+}
+#color{
+  display: inline;
+  opacity: 0.8;
+  background-color: inherit;
+  border-top: inherit;
+  border-left:inherit ;
+  border-right:inherit ;
+  
+}
+.visible{
+  cursor: pointer;
+  position: fixed;
+  width: 100%;
+  padding-left: 10%;
+
+}
+.active{
+  cursor: pointer;
+  opacity: 0;
+  bottom: 0;
+  position:relative;
+  transition-property: bottom;
+  animation-name: menu;
+  animation-timing-function:cubic-bezier(1, 0, 0, 1);
+  animation-duration: 7s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+
+}
+
+#colorMenu{
+  position:fixed;
+  display: flex;
+}
+
+@keyframes menu {
+  
+  100%{
+    opacity: 0.9;
+    bottom: -60px;
+  }
+}
