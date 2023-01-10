@@ -36,16 +36,9 @@ function App() {
     //adds color to specific part of model
     const initColor =(theModel)=>{
       const sections = document.getElementsByClassName('menu');
-    
-      /*
-      Object_1 & 2: sets color to whole model
-      Object_3 to base of shoe
-      Object_4 to body of shoe
-      Object_5 to laces of shoe
-      Object_6 to rubber of shoe
-      Object_7 to logo of shoe
-      */
-    
+      let name;
+      let color;
+      let newMaterial;
       //shoe model material components: 
       const object ={
         Base :'Object_3',
@@ -54,26 +47,21 @@ function App() {
         Logo :'Object_6',
         Rubber :'Object_7'
       } 
-    
-      var name;
-      var color;
-      let newMaterial;
       
       //method to determin which part of the shoe is selected and which color to assign:
+      
       sections.item(1).addEventListener('click',()=>{
     
         name = object.Base;
         color = document.getElementById('color');
+        
         newMaterial = new THREE.MeshPhongMaterial({color:color.value,shininess:10});
-      
         theModel.traverse((object)=>{
           if(object.name==name){
             object.material = newMaterial;
           };
-         
         });
       });
-    
       sections.item(2).addEventListener('click',()=>{
     
         name = object.Body;
@@ -127,7 +115,6 @@ function App() {
           };
         });
       });
-      
     }
 
     //renders and rotates the model along y-axies
@@ -166,6 +153,10 @@ function App() {
       });
     };
 
+
+   const save=()=>{
+    
+    }
     menuBar();
     colorSelect();
     rotate();
